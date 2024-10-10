@@ -2,8 +2,11 @@ import styled, { css } from "styled-components";
 import { Section, Label } from "/src/components/styled";
 import TextInput from "/src/components/ui/text-input/text-input";
 import { Swiper } from "swiper/react";
+import "swiper/swiper.css"
 import checkboxSelect from "/src/assets/checkbox.svg";
 import Price from "/src/components/ui/price/price";
+import { SwiperSlide } from "swiper/react";
+
 
 const leftWidth = "353px";
 
@@ -67,17 +70,31 @@ export const CheckboxLabel = styled.span`
     height: 22px;
     width: 22px;
     ${(props) =>
-      props.$isChecked
-        ? css`
+    props.$isChecked
+      ? css`
             background-color: #fc9b27;
             border: 1px solid rgba(0, 0, 0, 0.1);
             background-image: url(${checkboxSelect});
             background-repeat: no-repeat;
             background-position: center center;
           `
-        : css`
+      : css`
             background-color: ${props.theme.backgroundColorGray};
             border: 1px solid rgba(0, 0, 0, 0.1);
           `}
   }
+`;
+export const StyledSwiperSlide = styled(SwiperSlide)`
+width: 100%;
+  box-sizing: border-box;
+  dispay: contents;
+`;
+
+export const StyledSwiperSlideContent = styled.div`
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: flex-start;  // Контент будет выровнен по началу
 `;

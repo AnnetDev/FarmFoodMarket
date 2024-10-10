@@ -1,7 +1,7 @@
 import React from "react";
-import Panel from "/src/components/ui/panel/panel";
+// import Panel from "/src/components/ui/panel/panel";
 import { TitleSize } from "/src/components/ui/title/title";
-import { ProductImage, ProductTitle, Price, ContentWrapper } from "./styles";
+import { ProductImage, ProductTitle, Price, ContentWrapper, StyledProductCard } from "./styles";
 import Tabs from "/src/components/ui/tabs/tabs";
 import OptionsList from "/src/components/ui/options-list/options-list";
 
@@ -21,7 +21,7 @@ function ProductCart({ product }) {
     }
   ];
   return (
-    <Panel>
+    <StyledProductCard>
       <ProductImage src={product.image} />
       <ContentWrapper>
         <ProductTitle as="h3" size={TitleSize.SMALL}>
@@ -32,7 +32,7 @@ function ProductCart({ product }) {
           {product.price} руб. / {product.weight} гр.
         </Price>
       </ContentWrapper>
-    </Panel>
+    </StyledProductCard>
   );
 }
 

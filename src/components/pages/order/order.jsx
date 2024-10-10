@@ -4,6 +4,8 @@ import Title, { TitleSize } from "/src/components/ui/title/title";
 import ProductCart from "/src/components/ui/product-cart/product-cart";
 import Button from "/src/components/ui/button/button";
 import CheckboxList from "/src/components/ui/checkbox-list/checkbox-list";
+import "swiper/swiper.css"
+
 
 import {
   LeftColumn,
@@ -12,7 +14,9 @@ import {
   PriceLabel,
   PriceValue,
   ProductSwiper,
-  CheckboxLabel
+  CheckboxLabel,
+  StyledSwiperSlide,
+  StyledSwiperSlideContent
 } from "./styles";
 import { SwiperSlide } from "swiper/react";
 import SwiperCore, { Pagination, Mousewheel, Scrollbar } from "swiper/core";
@@ -100,8 +104,10 @@ function Order({
         }}
       >
         {products.map((product) => (
-          <SwiperSlide key={product.id}>
-            <ProductCart product={product} />
+          <SwiperSlide>
+            <StyledSwiperSlideContent key={product.id}>
+              <ProductCart product={product} />
+            </StyledSwiperSlideContent>
           </SwiperSlide>
         ))}
       </ProductSwiper>
