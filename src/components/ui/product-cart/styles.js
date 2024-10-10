@@ -7,6 +7,7 @@ export const StyledProductCard = styled.article`
   gap: 20px;
   height: 248px;
   width: 727px;
+  background-color: ${(props) => props.theme.colorWhite};
   padding: 20px;
   margin: 0;
   border: 1px solid #0000001a;
